@@ -6,7 +6,7 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     <div className={clsx(css.buttonThumb)}>
       {options.map((option, index) => {
         return (
-          <li key={index}>
+          <div key={index}>
             <button
               type="button"
               name={option}
@@ -14,7 +14,7 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
             >
               {option}
             </button>
-          </li>
+          </div>
         );
       })}
     </div>

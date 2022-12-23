@@ -29,9 +29,8 @@ export class App extends Component {
 
     if (totalFeedback < 1) {
       return 0;
-    }
-
-    return Math.round((good * 100) / totalFeedback);
+    }else
+     return Math.round((good * 100) / totalFeedback);
   }
 
   render() {
@@ -39,10 +38,7 @@ export class App extends Component {
     return (
       <>
         <Section title="Please leave feedback">
-          <FeedbackOptions
-            options={Object.keys(this.state)}
-            onLeaveFeedback={this.handleLeaveFeedback}
-          ></FeedbackOptions>
+          <FeedbackOptions options={Object.keys(this.state)} onLeaveFeedback={this.handleLeaveFeedback}/>
           <h2>Statistics</h2>
           {this.countTotalFeedback() !== 0 ? (
             <Statistics
@@ -52,9 +48,7 @@ export class App extends Component {
               total={this.countTotalFeedback()}
               positivePercentage={this.countPositiveFeedbackPercentage()}
             />
-          ) : (
-            <Notification message="There is no feedback" />
-          )}
+          ) : (<Notification message="There is no feedback" />)}
         </Section>
       </>
     );
