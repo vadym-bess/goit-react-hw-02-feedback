@@ -3,7 +3,6 @@ import css from './FeedbackOptions.module.css';
 import PropTypes from 'prop-types';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-  console.log(options);
   return (
     <div className={clsx(css.buttonThumb)}>
       {options.map((option, index) => {
